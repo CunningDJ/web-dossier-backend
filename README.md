@@ -1,4 +1,4 @@
-# JSDOM-React Scraper: Backend
+# Web Dossier: Backend
 
 ## Intro
 This is the backend of the JSDOM-React scraper app.  This is an ExpressJS-based server that uses JSDOM to scrape websites on command and passes back analytics data from what it retrieved.
