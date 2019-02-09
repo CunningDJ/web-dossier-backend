@@ -1,0 +1,4 @@
+node_modules/
+
+dist/*
+!dist/.BUILD_FILES_HERE

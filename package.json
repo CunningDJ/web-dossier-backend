@@ -1,0 +1,35 @@
+{
+  "name": "web-dossier-backend",
+  "version": "1.0.0",
+  "description": "Backend for Web Dossier - Web analytics on demand.",
+  "main": "dist/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "ts-check": "tsc --noEmit",
+    "prod": "node dist/server.js PROD",
+    "testprod": "node dist/server.js TESTPROD",
+    "dev": "nodemon dist/server.js DEV"
+  },
+  "author": "David J. Cunningham <david@cunningdj.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^1.18.9",
+    "typescript": "^3.3.1"
+  },
+  "dependencies": {
+    "@types/express": "^4.16.1",
+    "@types/jsdom": "^12.2.1",
+    "@types/morgan": "^1.7.35",
+    "express": "^4.16.4",
+    "jsdom": "^13.2.0",
+    "morgan": "^1.9.1"
+  },
+  "keywords": [
+    "nodejs",
+    "express",
+    "api",
+    "typescript",
+    "jsdom"
+  ]
+}
