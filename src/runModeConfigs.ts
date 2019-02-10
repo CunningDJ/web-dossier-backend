@@ -9,18 +9,18 @@ const DEFAULT_DEV_ACCESS_CONTROL_ALLOW_ORIGIN = 'http://localhost:3000';    // d
 const DEFAULT_PROD_ACCESS_CONTROL_ALLOW_ORIGIN = 'http://webdossier.net';
 
 const runModeConfigs: { [runModeKey: string]: IRunModeConfig } = {
-    'DEV': {
-        servePort: 9191,
-        accessControlAllowOrigin: DEFAULT_DEV_ACCESS_CONTROL_ALLOW_ORIGIN
-    },
-    'TESTPROD': {
-        servePort: 9191,
-        accessControlAllowOrigin: DEFAULT_PROD_ACCESS_CONTROL_ALLOW_ORIGIN
-    },
-    'PROD': {
-        servePort: 9191,
-        accessControlAllowOrigin: DEFAULT_PROD_ACCESS_CONTROL_ALLOW_ORIGIN
-    }
+  'DEV': {
+    servePort: 9191,
+    accessControlAllowOrigin: DEFAULT_DEV_ACCESS_CONTROL_ALLOW_ORIGIN
+  },
+  'TESTPROD': {
+    servePort: 9191,
+    accessControlAllowOrigin: DEFAULT_PROD_ACCESS_CONTROL_ALLOW_ORIGIN
+  },
+  'PROD': {
+    servePort: 9191,
+    accessControlAllowOrigin: DEFAULT_PROD_ACCESS_CONTROL_ALLOW_ORIGIN
+  }
 };
 
 export const RUN_MODE_KEYS: string[] = Object.keys(runModeConfigs);
