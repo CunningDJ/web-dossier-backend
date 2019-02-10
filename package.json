@@ -7,9 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
     "ts-check": "tsc --noEmit",
-    "prod": "node dist/server.js PROD",
-    "testprod": "node dist/server.js TESTPROD",
-    "dev": "nodemon dist/server.js DEV"
+    "prod": "NODE_ENV=production && pm2 start dist/server.js --name=\"web-dossier-api\" -i max --watch dist/ -- PROD",
+    "testprod": "NODE_ENV=production && node dist/server.js TESTPROD",
+    "dev": "NODE_ENV=development && nodemon dist/server.js DEV"
   },
   "author": "David J. Cunningham <david@cunningdj.com>",
   "license": "ISC",
