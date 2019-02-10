@@ -1,8 +1,11 @@
 import { JSDOM } from 'jsdom';
+import sanitizeHtml from 'sanitize-html';
 
 import { IGetScrapedUrlDataReturn, IGetScrapedReaderDataReturn } from './scrape.d';
 
-const TEXT_ELEMENTS_TAGS_QUERY = 'h1,h2,h3,h4,h5,h6,p,ul,ol,table';
+const ALLOWED_READER_TAGS = [ 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'blockquote', 'p', 'a', 'ul', 'ol',
+  'nl', 'li', 'b', 'i', 'strong', 'em', 'strike', 'code', 'hr', 'br', 'div',
+  'table', 'thead', 'caption', 'tbody', 'tr', 'th', 'td', 'pre' ];
 
 const META_ITEMS = ['description'];
 
@@ -69,13 +72,8 @@ function getRawTextElementsHTML(dom: JSDOM): string {
    * Gets raw HTML of all the text elements in a DOM
    */
 
-  // TODO: Query & processing that allows grabbing anchor and other elements
-  //         without duplicating their children
-  const { document } = dom.window;
-  const textEls = document.querySelectorAll(TEXT_ELEMENTS_TAGS_QUERY);
-  let rawHTML = "";
-  [...textEls].forEach((el) => {
-    rawHTML += el.outerHTML;
-  })
+  const rawHTML = sanitizeHtml(
+                dom.window.document.body.innerHTML,
+                { allowedTags: ALLOWED_READER_TAGS });
   return rawHTML;
 }
