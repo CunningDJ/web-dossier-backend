@@ -18,7 +18,7 @@ const runModeConfigs: { [runModeKey: string]: IRunModeConfig } = {
         accessControlAllowOrigin: DEFAULT_PROD_ACCESS_CONTROL_ALLOW_ORIGIN
     },
     'PROD': {
-        servePort: 80,
+        servePort: 9191,
         accessControlAllowOrigin: DEFAULT_PROD_ACCESS_CONTROL_ALLOW_ORIGIN
     }
 };
